@@ -8,6 +8,7 @@ public class ChatBot {
         greet();
         remindName();
         guessAge();
+        count();
     }
 
     static void greet() {
@@ -29,5 +30,13 @@ public class ChatBot {
         int rem7 = scanner.nextInt();
         int age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105;
         System.out.println("Your age is " + age + "; that's a good time to start programming!");
+    }
+
+    static void count() {
+        System.out.println("Now I will prove to you that I can count to any number you want.");
+        int num = scanner.nextInt();
+        for (int i = 0; i <= num; i++) {
+            System.out.printf("%d!\n", i);
+        }
     }
 }
