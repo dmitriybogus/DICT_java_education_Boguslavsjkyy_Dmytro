@@ -1,8 +1,20 @@
 package Chatbot;
 
+import java.util.Scanner;
+
 public class ChatBot {
-    public static void main(String [] args){
+    final static Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        greet();
+        remindName();
+    }
+    static void greet() {
         System.out.println("Hello! My name is " + "Jarvis" + ".");
         System.out.println("I was created in " + "2022" + ".");
+        System.out.println("Please, remind me your name.");
+    }
+    static void remindName() {
+        String name = scanner.nextLine();
+        System.out.println("What a great name you have, " + name + "!");
     }
 }
