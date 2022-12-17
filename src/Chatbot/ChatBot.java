@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class ChatBot {
     final static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        greet();
-        remindName();
-        guessAge();
-        count();
+//        greet();
+//        remindName();
+//        guessAge();
+//        count();
+        test();
+        end();
     }
 
     static void greet() {
@@ -39,4 +41,31 @@ public class ChatBot {
             System.out.printf("%d!\n", i);
         }
     }
+    static void test() {   System.out.println("Let's test your programming knowledge.");
+        System.out.println("Why do we use methods?");
+        System.out.println("1. To repeat a statement multiple times.\n" +
+                "2. To decompose a program into several small subroutines.\n" +
+                "3. To determine the execution time of a program.\n" +
+                "4. To interrupt the execution of a program.");
+        while (true) {
+            Scanner in = new Scanner(System.in);
+            System.out.print("");
+            int num = Integer.parseInt(in.next());
+
+            if (num == 2) {
+                System.out.print("Great, you right!\n");
+                break;
+            }
+            else System.out.println("Please, try again.\n" +
+                    "1. To repeat a statement multiple times.\n" +
+                    "2. To decompose a program into several small subroutines.\n" +
+                    "3. To determine the execution time of a program.\n" +
+                    "4. To interrupt the execution of a program.");
+        }
+    }
+
+    static void end() {
+        System.out.println("Congratulations, have a nice day!");
+    }
+
 }
