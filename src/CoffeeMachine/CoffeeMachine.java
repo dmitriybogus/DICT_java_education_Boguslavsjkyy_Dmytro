@@ -8,19 +8,19 @@ public class CoffeeMachine {
     int beans = 120;
     int cups = 9;
     int money = 550;
-    Scanner userInput = new Scanner(System.in);
 
-    public void start () {
+
+    public void start (Scanner userInput) {
         label:
         while (true) {
             System.out.println("Write action (buy, fill, take, remaining, exit):");
             String choice = userInput.nextLine();
             switch (choice) {
                 case "buy":
-                    buy();
+                    buy(userInput);
                     break;
                 case "fill":
-                    fill();
+                    fill(userInput);
                     break;
                 case "remaining":
                     remaining();
@@ -49,7 +49,7 @@ public class CoffeeMachine {
         money = 0;
     }
 
-    public void fill () {
+    public void fill (Scanner userInput) {
         System.out.println("Write how many ml of water you want to add:");
         int waterAdd = Integer.parseInt(userInput.nextLine());
         System.out.println("Write how many ml of milk you want to add:");
@@ -64,7 +64,7 @@ public class CoffeeMachine {
         cups = cups + cupsAdd;
     }
 
-    public void buy () {
+    public void buy (Scanner userInput) {
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino 'back' -" +
                 " back to main menu:");
         String choice = userInput.nextLine();
@@ -157,9 +157,4 @@ public class CoffeeMachine {
         return false;
     }
 
-    public static void main(String[] args) {
-        CoffeeMachine myCoffeeMachine = new CoffeeMachine();
-        myCoffeeMachine.start();
-
-    }
 }
